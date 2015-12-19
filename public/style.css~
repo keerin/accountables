@@ -1,8 +1,0 @@
-.golden-face-gradient {
-background: linear-gradient(90deg, #8e7a3f 10%, #b09a51 90%); /* W3C */
-background: -webkit-linear-gradient(90deg, #8e7a3f 10%, #b09a51 90%); /* Chrome 10+, Saf5.1+ */
-}
-
-.new-leaf-gradient {	background: -webkit-linear-gradient(90deg,#00537E 10%,#3AA17E 90%);
-background: linear-gradient(90deg,#00537E 10%,#3AA17E 90%);
-}
