@@ -8,7 +8,6 @@ gem 'shotgun'
 
 gem "data_mapper"
 gem 'dm-core'
-gem 'dm-sqlite-adapter'
 gem 'dm-migrations'
 gem 'dm-serializer'
 gem 'dm-timestamps'
@@ -20,10 +19,7 @@ gem 'dm-postgres-adapter'
 gem 'bcrypt-ruby'
 gem 'warden'
 
-group :development do
-  gem 'sqlite3'
-end
+gem 'sqlite3', :group => 'development'
 
-group :production do
-  gem 'pg'
-end
+gem 'pg', :group => 'production'
+
