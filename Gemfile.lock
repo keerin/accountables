@@ -96,6 +96,7 @@ DEPENDENCIES
   dm-transactions
   dm-types
   dm-validations
+  do_sqlite3 (= 0.10.16)
   haml
   shotgun
   sinatra

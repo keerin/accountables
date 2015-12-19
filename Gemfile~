@@ -15,7 +15,7 @@ gem 'dm-timestamps'
 gem 'dm-transactions'
 gem 'dm-types'
 gem 'dm-validations'
-gem 'dm-postgres-adapter'
+gem 'dom-postgres-adapter'
 
 gem 'bcrypt-ruby'
 gem 'warden'
