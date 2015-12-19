@@ -1,4 +1,4 @@
-DataMapper.setup(:default, "sqlite://#{Dir.pwd}/db/accountables.sqlite3")
+DataMapper.setup(:default, ENV['DATABASE_URL'] ||"sqlite://#{Dir.pwd}/db/accountables.sqlite3")
 
 class User
   include DataMapper::Resource
