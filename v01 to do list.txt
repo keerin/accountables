@@ -1,0 +1,50 @@
+===============
+V0.1 to do list
+===============
+
+layout.haml
+---
+*00. Create layout.haml
+*01. Create basic header and footer with a main body content div with yield tag inside it.
+
+index.haml
+---
+*02. Create index.haml
+*03. User will see their first name and current habit
+*04. User will see their current streak
+*05. User will see a message
+
+login.haml
+---
+*06. Create login.haml
+*07. Ask user for email address and password and show login button
+*08. Link to register page
+
+register.haml
+---
+*09. Create register.haml
+*10. Ask user for first name, email address, habit, password
+*11. Link to login page
+
+app.rb
+---
+*12. Create app.rb and require everything needed - including writing gemfile
+*13. Write Get route to show index
+*14. Write Get routes for login and register
+15. Write Post routes for login and register
+
+db.rb
+---
+*16. Create db.rb
+*17. Create db class to store user id name, email address, password, habit and current streak
+
+accountable.sqlite3
+---
+*18. Create accountable.sqlite3
+
+app.rb
+---
+19. Modify get route for index to pull in everything from db
+20. Write Post route for index to include completed task for day
+21. Modify get route for index to include current streak
+22. Redirect get index route to show login page if not logged in

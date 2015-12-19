@@ -1,0 +1,91 @@
+=============
+Accountabl.es
+=============
+
+Accountables is a web app that will let users keep themselves accountable for completing a certain task to a partner. Use cases would be for daily writing practice, meditation practice, early waking, daily exercise completion, staying sober, or any other habit that has been agreed upon as a daily practice.
+
+While a number of different apps and services offer this kind of thing as part of what they do, the idea here is to follow the "one thing well" philosophy. This webapp will simply do one small thing, which is to allow an individual to keep track of a daily practice, and update a partner for the purposes of accountability.
+
+This is how it will be laid out:
+
+1. User logs in using their emails address and password || registers with firstname, email address, password and habit
+2. User sees index page
+3. Index page contains:
+  3.1 Your first name and current habit (Hi #{name}, you are currently commited to #{habit} every day.)
+  3.2 Your accountability partner (Keeping you accountable right now is #{partnerName}. || Invite a partner?)
+  3.3 Your current streak (You have been doing #{habit} for #{days} days.)
+  3.4 Your partner's streak (Your partner has been doing #{habit} for #{days} days.)
+  3.5 Your best streak (Your longest chain was #{days} days.)
+  3.6 Your partner's best streak (Your partner's longest chain was #{days} days.)
+  3.7 Message: Have you completed your task for #{day}? (Yes) || Well done, you have completed your task for #{day}
+  3.8 Link to profile
+4. Profile page contains:
+  4.1 First name, email and password change forms
+  4.2 Change habit
+  4.3 Indication of current timezone (determines when you can answer the question again) & option to change timezone
+  4.4 Delete your account
+
+The MUST items are:
+
+1, 2, 3.1, 3.3, 3.7
+
+The SHOULD items are:
+
+3.2, 3.3, 3.8, 4.1
+
+The COULD items are:
+
+3.4, 3.5, 3.6, 4.2, 4.3, 4.4
+
+There are no WON'T items at the moment.
+
+Version 0.1 will do the following:
+
+* User logs in using their emails address and password || registers with name, email address, password and habit
+* User sees index page
+* User will see their name and current habit: "Hi #{name}, you are currently commited to #{habit} every day."
+* User will see their current streak: "You have been doing #{habit} for #{days} days."
+* User will see a message: "Have you completed your task for #{day}?" (Yes) || "Well done, you have completed your task for #{day}."
+
+I'll need to do this in the following order:
+
+layout.haml
+---
+Create basic header and footer with a main body content div with yield tag inside it.
+
+index.haml
+---
+User sees index page
+User will see their first name and current habit
+User will see their current streak
+User will see a message
+
+login.haml
+---
+
+Ask user for email address and password and show login button
+Link to register page
+
+register.haml
+---
+
+Ask user for first name, email address
+Link to login page
+
+app.rb
+---
+
+Get route to show index
+Redirect this route to show login page if not logged in
+Get routes for login and register
+Post routes for login and register
+Modify get route for index to pull in everything from db
+Post route for index to include completed task for day
+Modify get route for index to include current streak
+
+db.rb
+---
+
+Create db class to store user id name, email address, password, habit and current streak
+
+After this v0.1 will be complete, and I will plan v0.2
