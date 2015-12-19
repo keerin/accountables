@@ -16,8 +16,6 @@ require 'sinatra/flash'
 require 'warden'
 require 'bcrypt'
 require 'data_mapper'
-require 'dm-sqlite-adapter', :group => 'development'
-require 'dm-postgres-adapter', :group => 'production'
 
 require './model'
 require 'bundler'
