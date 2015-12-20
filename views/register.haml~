@@ -1,5 +1,5 @@
 .login
-%form{:action => "/register", :method => "post"}
+%form{:action => "/test", :method => "post"}
 
   %p.six.centred
     Looking to register eh? Just fill out the form below and you'll be ready to go.

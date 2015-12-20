@@ -95,6 +95,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   data_mapper
+  dm-aggregates
   dm-core
   dm-migrations
   dm-postgres-adapter

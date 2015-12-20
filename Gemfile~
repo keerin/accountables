@@ -14,7 +14,6 @@ gem 'dm-timestamps'
 gem 'dm-transactions'
 gem 'dm-types'
 gem 'dm-validations'
-gem 'dm-aggregates'
 
 gem 'bcrypt-ruby'
 gem 'warden'

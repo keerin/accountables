@@ -16,6 +16,7 @@ require 'sinatra/flash'
 require 'warden'
 require 'bcrypt'
 require 'data_mapper'
+require 'dm-aggregates'
 
 require './model'
 require 'bundler'
@@ -119,16 +120,26 @@ class Accountables < Sinatra::Base
   end
 
   post '/register' do
-    User.create(
-      :name           => params[:name],
-      :username       => params[:username],
-      :habit          => params[:habit],
-      :password       => params[:password],
-      :current_streak => '0',
-    )
-    redirect '/myaccount'
+  
+    if params[:name].empty? || params[:username].empty? || params[:habit].empty? || params[:password].empty?
+      flash[:nope] = "Please fill out all fields"
+      redirect '/register'
+    elsif User.count(:username=>params[:username]) == 0
+      User.create(
+        :name           => params[:name],
+        :username       => params[:username],
+        :habit          => params[:habit],
+        :password       => params[:password],
+        :current_streak => '0',
+      )
+      redirect '/myaccount'
+      # Add username and password to session.
+    else
+      flash[:already] = "Someone's already using that email address here"
+      redirect '/register'
+    end
   end
-
+  
 # My Account page - ie where the magic happens
   
   get '/myaccount' do
@@ -150,5 +161,4 @@ class Accountables < Sinatra::Base
     end
     haml :myaccount, layout_engine: :haml
   end
-  
 end
