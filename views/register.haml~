@@ -1,0 +1,28 @@
+.login
+%form{:action => "/register", :method => "post"}
+
+  %p.six.centred
+    Looking to register eh? Just fill out the form below and you'll be ready to go.
+
+  %p.six.centred
+    %label First Name
+    %input{:type => "text", :placeholder => "What's your first name?", :name => "name"}
+  
+  %p.six.centred
+    %label Email Address
+    %input{:type => "email", :placeholder => "and your email address?", :name => "username"}
+
+  %p.six.centred
+    %label Habit
+    %input{:type => "text", :placeholder => "What will you be completing every day?", :name => "habit"}
+ 
+  %p.six.centred
+    %label Password
+    %input{:type => "password", :placeholder => "Set your password", :name => "password"}
+    
+  %p.four.centred
+    %input.btn.btn--gray-dark(type="submit" value="Register")
+
+  %p.four.centred
+    Already registered? Why not 
+    %a{:href => "/auth/login"}log in?
