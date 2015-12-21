@@ -12,6 +12,7 @@ require 'sinatra'
 require 'haml'
 require 'tilt/haml'
 require 'sinatra/flash'
+require "active_support/all"
 
 require 'warden'
 require 'bcrypt'
@@ -46,7 +47,10 @@ class Accountables < Sinatra::Base
 
   enable :sessions
   register Sinatra::Flash
-  set :session_secret, "supersecret"
+  set :session_secret, ENV["SECRET_SESSION"]
+
+  time = Time.now.strftime("%H:%M")
+
 
   use Warden::Manager do |config|
     # Tell Warden how to save our User info into a session.
@@ -131,6 +135,7 @@ class Accountables < Sinatra::Base
         :habit          => params[:habit],
         :password       => params[:password],
         :current_streak => '0',
+        :updated_time   => time # This needs to account for one minute less than this, not sure how yet.
       )
       redirect '/myaccount'
       # Add username and password to session.
@@ -144,21 +149,37 @@ class Accountables < Sinatra::Base
   
   get '/myaccount' do
     env['warden'].authenticate!
+
+    # Set up sessions so they are the same as the authenticated user
     
     session['name'] = env['warden'].user[:name]
     session["habit"] = env['warden'].user[:habit].downcase
     session["current_streak"] = env['warden'].user[:current_streak]
     
-    haml :myaccount, layout_engine: :haml
+    # Set up user variable to be the authenticated user
+    # Set the last time the habit was completed to the last updated time stored in the db
+    # Set now to be the same as time, just for semantic code
+    
+    @user = User.first(name: session['name'])
+    last_completed = @user.updated_time
+    now = time
+    
+    if (last_completed) > now
+      haml :myaccount, layout_engine: :haml
+    else
+      haml :myaccountnope, layout_engine: :haml
+    end
   end
   
   post '/myaccount' do
     if params{"Yep!"}
       @user = User.first(name: session['name'])
       @user.current_streak +=1
+      @user.updated_time = time
       @user.save
       session["current_streak"] = @user.current_streak
+      session["updated_time"] = @user.updated_time
     end
-    haml :myaccount, layout_engine: :haml
+    haml :myaccountnope, layout_engine: :haml
   end
 end

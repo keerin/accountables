@@ -19,6 +19,7 @@ class User
   property :habit           , String
   property :password        , BCryptHash
   property :current_streak  , Integer
+  property :updated_time    , DateTime
 
   def authenticate(attempted_password)
     if self.password == attempted_password

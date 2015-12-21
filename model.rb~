@@ -1,5 +1,15 @@
 DataMapper.setup(:default, ENV['DATABASE_URL'] ||"sqlite://#{Dir.pwd}/db/accountables.sqlite3")
 
+configure :development do
+  set :database, "sqlite3:///database.db"
+  require 'dm-sqlite-adapter'
+end
+
+configure :production do
+  db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
+  require 'dm-postgres-adapter'
+end
+
 class User
   include DataMapper::Resource
   
@@ -9,6 +19,7 @@ class User
   property :habit           , String
   property :password        , BCryptHash
   property :current_streak  , Integer
+  property :updated_time    , Integer
 
   def authenticate(attempted_password)
     if self.password == attempted_password
@@ -21,11 +32,3 @@ end
 
 DataMapper.finalize
 DataMapper.auto_upgrade!
-
-configure :development do
-  set :database, "sqlite3:///database.db"
-end
-
-configure :production do
-  db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
-end

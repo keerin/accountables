@@ -1,6 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (4.2.5)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
     addressable (2.4.0)
     bcrypt (3.1.10)
     bcrypt-ruby (3.1.5)
@@ -63,8 +69,10 @@ GEM
     fastercsv (1.5.5)
     haml (4.0.7)
       tilt
+    i18n (0.7.0)
     json (1.8.3)
     json_pure (1.8.3)
+    minitest (5.4.3)
     multi_json (1.11.2)
     pg (0.18.4)
     rack (1.6.4)
@@ -84,7 +92,12 @@ GEM
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
       rack (~> 1.0)
+    thread_safe (0.3.5)
     tilt (2.0.1)
+    time_difference (0.4.2)
+      activesupport
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
     uuidtools (2.1.5)
     warden (1.2.4)
       rack (>= 1.0)
@@ -93,6 +106,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   bcrypt-ruby
   data_mapper
   dm-aggregates
@@ -112,4 +126,5 @@ DEPENDENCIES
   sinatra-flash
   sqlite3
   thin
+  time_difference
   warden

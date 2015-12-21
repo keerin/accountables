@@ -1,0 +1,10 @@
+%h3 Hey there #{session[:name]}, how are you?
+
+%p The habit you are currently tracking is #{session[:habit]}
+
+%p Number of days you have been doing this is #{session[:current_streak]}
+
+%p You have completed your #{session[:habit]} task today, good job!
+
+%p
+  %a{:href => "/auth/logout"}Log out?

@@ -5,6 +5,8 @@ gem "sinatra"
 gem 'sinatra-flash'
 gem "haml"
 gem 'shotgun'
+gem 'time_difference'
+gem 'active_support'
 
 gem 'data_mapper'
 gem 'dm-core'
@@ -14,6 +16,7 @@ gem 'dm-timestamps'
 gem 'dm-transactions'
 gem 'dm-types'
 gem 'dm-validations'
+gem 'dm-aggregates'
 
 gem 'bcrypt-ruby'
 gem 'warden'

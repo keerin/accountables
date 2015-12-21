@@ -16,15 +16,15 @@
     .body
       .flash
       - if flash[:success]
-        %p.small-6.large-centered.columns{:style => 'color: green;'}
+        %p{:style => 'color: green;'}
           = flash[:success]
       - if flash[:error]
-        %p.small-6.large-centered.columns{:style => 'color: red;'}
+        %p{:style => 'color: red;'}
           = flash[:error]
       - if flash[:nope]
-        %p.small-6.large-centered.columns{:style => 'color: red;'}
+        %p{:style => 'color: red;'}
           = flash[:nope]
       - if flash[:already]
-        %p.small-6.large-centered.columns{:style => 'color: red;'}
+        %p{:style => 'color: red;'}
           = flash[:already]
     #{yield}

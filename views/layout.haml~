@@ -21,4 +21,10 @@
       - if flash[:error]
         %p.small-6.large-centered.columns{:style => 'color: red;'}
           = flash[:error]
+      - if flash[:nope]
+        %p.small-6.large-centered.columns{:style => 'color: red;'}
+          = flash[:nope]
+      - if flash[:already]
+        %p.small-6.large-centered.columns{:style => 'color: red;'}
+          = flash[:already]
     #{yield}
