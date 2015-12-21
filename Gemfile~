@@ -6,7 +6,7 @@ gem 'sinatra-flash'
 gem "haml"
 gem 'shotgun'
 gem 'time_difference'
-gem 'active_support'
+gem 'activesupport'
 
 gem 'data_mapper'
 gem 'dm-core'
