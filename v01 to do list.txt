@@ -31,7 +31,7 @@ app.rb
 *12. Create app.rb and require everything needed - including writing gemfile
 *13. Write Get route to show index
 *14. Write Get routes for login and register
-15. Write Post routes for login and register
+*15. Write Post routes for login and register
 
 db.rb
 ---
@@ -44,7 +44,7 @@ accountable.sqlite3
 
 app.rb
 ---
-19. Modify get route for index to pull in everything from db
-20. Write Post route for index to include completed task for day
-21. Modify get route for index to include current streak
-22. Redirect get index route to show login page if not logged in
+*19. Modify get route for index to pull in everything from db
+*20. Write Post route for index to include completed task for day
+*21. Modify get route for index to include current streak
+*22. Redirect get index route to show login page if not logged in

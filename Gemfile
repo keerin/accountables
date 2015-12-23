@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
+ruby "2.2.1"
 
 gem "thin"
 gem "sinatra"
 gem 'sinatra-flash'
 gem "haml"
 gem 'shotgun'
+gem 'to_words'
 
 gem 'data_mapper'
 gem 'dm-core'

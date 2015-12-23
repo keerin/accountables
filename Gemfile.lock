@@ -85,6 +85,7 @@ GEM
       eventmachine (~> 1.0, >= 1.0.4)
       rack (~> 1.0)
     tilt (2.0.1)
+    to_words (1.1.0)
     uuidtools (2.1.5)
     warden (1.2.4)
       rack (>= 1.0)
@@ -112,4 +113,5 @@ DEPENDENCIES
   sinatra-flash
   sqlite3
   thin
+  to_words
   warden

@@ -31,7 +31,7 @@ The MUST items are:
 
 The SHOULD items are:
 
-3.2, 3.3, 3.8, 4.1
+3.2, 3.4, 3.8, 4.1
 
 The COULD items are:
 
@@ -51,41 +51,41 @@ I'll need to do this in the following order:
 
 layout.haml
 ---
-Create basic header and footer with a main body content div with yield tag inside it.
+*Create basic header and footer with a main body content div with yield tag inside it.
 
 index.haml
 ---
-User sees index page
-User will see their first name and current habit
-User will see their current streak
-User will see a message
+*User sees index page
+*User will see their first name and current habit
+*User will see their current streak
+*User will see a message
 
 login.haml
 ---
 
-Ask user for email address and password and show login button
-Link to register page
+*Ask user for email address and password and show login button
+*Link to register page
 
 register.haml
 ---
 
-Ask user for first name, email address
-Link to login page
+*Ask user for first name, email address
+*Link to login page
 
 app.rb
 ---
 
-Get route to show index
-Redirect this route to show login page if not logged in
-Get routes for login and register
-Post routes for login and register
-Modify get route for index to pull in everything from db
-Post route for index to include completed task for day
-Modify get route for index to include current streak
+*Get route to show index
+*Redirect this route to show login page if not logged in
+*Get routes for login and register
+*Post routes for login and register
+*Modify get route for index to pull in everything from db
+*Post route for index to include completed task for day
+*Modify get route for index to include current streak
 
 db.rb
 ---
 
-Create db class to store user id name, email address, password, habit and current streak
+*Create db class to store user id name, email address, password, habit and current streak
 
 After this v0.1 will be complete, and I will plan v0.2

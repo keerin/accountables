@@ -13,6 +13,7 @@ require 'haml'
 require 'tilt/haml'
 require 'sinatra/flash'
 require 'date'
+require 'to_words'
 
 require 'warden'
 require 'bcrypt'
@@ -158,6 +159,14 @@ class Accountables < Sinatra::Base
     
     @user = User.first(name: session['name'])
     last_updated = @user.last_updated
+    
+    if session[:current_streak] < 1
+      @message = "You've not completed a single day yet :( Hit the button below when you have." 
+    elsif session[:current_steak] == 1
+      @message =  "You have been doing this task for #{session[:current_streak].to_words} day. Keep going!"
+    else session[:current_streak] > 1
+      @message = "You have been doing this task for #{session[:current_streak].to_words} days now, that's pretty badass!"
+    end
         
     # Only show the template with the yep button if it was completed at least one day ago
     
