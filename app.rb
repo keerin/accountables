@@ -152,7 +152,7 @@ class Accountables < Sinatra::Base
     
     session['name'] = env['warden'].user[:name]
     session["habit"] = env['warden'].user[:habit].downcase
-    session["current_streak"] = env['warden'].user[:current_streak]
+    session["current_streak"] = env['warden'].user[:current_streak].to_words
     
     # Set up user variable to be the authenticated user
     # Set the last time the habit was completed to the last updated date stored in the db
@@ -160,12 +160,12 @@ class Accountables < Sinatra::Base
     @user = User.first(name: session['name'])
     last_updated = @user.last_updated
     
-    if session[:current_streak] == 0
+    if session[:current_streak] == "zero"
       @message = "You've not completed a single day yet :( Hit the button below when you have." 
-    elsif session[:current_steak] == 1
-      @message =  "You have been doing this task for #{session[:current_streak].to_words} day. Keep going!"
-    else session[:current_streak] > 1
-      @message = "You have been doing this task for #{session[:current_streak].to_words} days now, that's pretty badass!"
+    elsif session[:current_streak] == "one"
+      @message =  "You have been doing this task for #{session[:current_streak]} day. Keep going!"
+    else
+      @message = "You have been doing this task for #{session[:current_streak]} days now, that's pretty badass!"
     end
         
     # Only show the template with the yep button if it was completed at least one day ago
@@ -183,7 +183,7 @@ class Accountables < Sinatra::Base
       @user.current_streak +=1
       @user.last_updated = Date.today
       @user.save
-      session["current_streak"] = @user.current_streak
+      session["current_streak"] = @user.current_streak.to_words
       session["last_updated"] = @user.last_updated
     end
     haml :myaccountnope, layout_engine: :haml
