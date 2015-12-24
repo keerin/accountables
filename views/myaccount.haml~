@@ -2,7 +2,7 @@
 
 %p The habit you are currently tracking is #{session[:habit]}
 
-%p #{@message}
+%p You have been doing this task for #{session[:current_streak].to_words} days now. Pretty badass!
 
 %p Have you completed your #{session[:habit]} task today?
 
