@@ -31,11 +31,11 @@ The MUST items are:
 
 The SHOULD items are:
 
-3.2, 3.4, 3.8, 4.1
+3.2, 3.4, 3.8, 4.1, 4.4
 
 The COULD items are:
 
-3.4, 3.5, 3.6, 4.2, 4.3, 4.4
+3.4, 3.5, 3.6, 4.2, 4.3
 
 There are no WON'T items at the moment.
 
@@ -88,4 +88,12 @@ db.rb
 
 *Create db class to store user id name, email address, password, habit and current streak
 
-After this v0.1 will be complete, and I will plan v0.2
+After this v0.1 will be complete, and I will plan v0.2.
+
+V0.1 bugs
+---
+
+1. When registering sucessfully, you should also be automatically logged in
+2. @message does not show when you complete a task for the day, only upon page reload.
+
+V0.2 will look at all of the SHOULD items from the above
