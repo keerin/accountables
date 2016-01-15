@@ -21,34 +21,17 @@ require 'data_mapper'
 require 'dm-aggregates'
 
 require './model'
+require './warden'
 require 'bundler'
 Bundler.require
 
 # Set up Warden authentication and strategies
 
-Warden::Strategies.add(:password) do
-  def valid?
-    params['user'] && params['user']['username'] && params['user']['password']
-  end
-
-  def authenticate!
-    user = User.first(username: params['user']['username'])
-
-    if user.nil?
-      throw(:warden, message: "The username you entered does not exist.")
-    elsif user.authenticate(params['user']['password'])
-      success!(user)
-    else
-      throw(:warden, message: "The username and password combination doesn't exist")
-    end
-  end
-end
-
 class Accountables < Sinatra::Base
 
   enable :sessions
   register Sinatra::Flash
-  set :session_secret, ENV['SESSION_SECRET'] || 'spongemonkeyhellodickhead1334$$$'
+  set :session_secret, ENV['SESSION_SECRET']
 
   use Warden::Manager do |config|
     # Tell Warden how to save our User info into a session.
@@ -67,8 +50,8 @@ class Accountables < Sinatra::Base
       # warden.authenticate! returns a false answer. We'll show
       # this route below.
       action: 'auth/unauthenticated'
-    # When a user tries to log in and cannot, this specifies the
-    # app to send the user to.
+      # When a user tries to log in and cannot, this specifies the
+      # app to send the user to.
     config.failure_app = self
   end
 
@@ -186,6 +169,15 @@ class Accountables < Sinatra::Base
       session["current_streak"] = @user.current_streak.to_words
       session["last_updated"] = @user.last_updated
     end
+    
+    if session[:current_streak] == "zero"
+      @message = "You've not completed a single day yet :( Hit the button below when you have." 
+    elsif session[:current_streak] == "one"
+      @message =  "You have been doing this task for #{session[:current_streak]} day. Keep going!"
+    else
+      @message = "You have been doing this task for #{session[:current_streak]} days now, that's pretty badass!"
+    end
+    
     haml :myaccountnope, layout_engine: :haml
   end
 end
