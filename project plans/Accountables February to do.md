@@ -15,31 +15,31 @@ There are two main additions to the app in V0.2 - full user management and addin
 
 ### 20/02/16 - Full user management
 
-** settings.haml **
+**settings.haml**
 
 * Create settings.haml
 * Add first name, email and password change forms
 * Add a delete your account option, including confirm delete option
 * Only allow access to the settings page if logged in
 
-** app.rb **
+**app.rb**
 
 * Create GET and POST routes for settings.haml
 
 ### 27/02/16 - Partners
 
-** myaccount.haml / myaccountnope.haml **
+**myaccount.haml / myaccountnope.haml**
 
 * Your accountability partner (Keeping you accountable right now is #{partnerName}. || Invite a partner?)
 * Your partner's streak (#{partnerName} has been doing #{habit} for #{days} days.)
 * Link to settings page
 
-** model.rb **
+**model.rb**
 
 * Add hasPartner column (true/false)
 * Add partner column (link by ID?)
 
-** app.rb **
+**app.rb**
 
 * Create add partner functionality and conditional logic (only show if hasPartner in db is false)
 * Allow adding partner by email address
