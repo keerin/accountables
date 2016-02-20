@@ -8,3 +8,6 @@
 
 %form{:action => "/myaccount", :method => "post"}
   %input.btn.btn--gray-dark{:type => "submit", :name => "complete", :value => "Yep!"}
+
+%p
+  %a{:href => "/auth/logout"}Log out?

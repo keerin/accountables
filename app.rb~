@@ -185,13 +185,13 @@ class Accountables < Sinatra::Base
     haml :settings, layout_engine: :haml
   end
 
-  get '/confirm-delete' do
+  get '/delete' do
     env['warden'].authenticate!
     @user = User.first(name: session['name'])
     haml :delete, layout_engine: :haml
   end
 
-  delete '/confirm-delete' do
+  delete '/delete' do
     flash[:deleted] = "Your account has been successfully deleted. Come back soon!"
     @user = User.first(name: session['name'])
     @user.destroy

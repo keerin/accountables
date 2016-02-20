@@ -5,3 +5,6 @@
 %p #{@message}
 
 %p You have completed your #{session[:habit]} task today, good job!
+
+%p
+  %a{:href => "/auth/logout"}Log out?

@@ -35,8 +35,5 @@
       - if flash[:already]
         %p{:style => 'color: red;'}
           = flash[:already]
-      - if flash[:deleted]
-        %p{:style => 'color: green;'}
-          = flash[:deleted]
 
       #{yield}

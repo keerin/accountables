@@ -23,3 +23,7 @@ background: linear-gradient(90deg, #b6eae1 10%, #D2FBAD 90%); /* W3C */
   float:left;
   margin-right: 10px;
 }
+
+.p.six.centred.list.ul.li{
+  list-style-type: none;
+}

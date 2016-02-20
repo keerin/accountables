@@ -20,11 +20,11 @@ There are two main additions to the app in V0.2 - full user management and addin
 * Create settings.haml
 * Add first name, email and password change forms
 * Add a delete your account option, including confirm delete option
+* Only allow access to the settings page if logged in
 
 **app.rb**
 
 * Create GET and POST routes for settings.haml
-* Only allow access to the settings page if logged in
 
 ### 27/02/16 - Partners
 
