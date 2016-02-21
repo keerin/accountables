@@ -107,7 +107,7 @@ class Accountables < Sinatra::Base
     if params[:name].empty? || params[:username].empty? || params[:habit].empty? || params[:password].empty?
       flash[:nope] = "Please fill out all fields"
       redirect '/register'
-    elsif User.count(:username=>params[:username]) == 0
+    elsif User.count(:username => params[:username]) == 0
       User.create(
         :name           => params[:name],
         :username       => params[:username],
@@ -131,6 +131,7 @@ class Accountables < Sinatra::Base
 
     # Set up sessions so they are the same as the authenticated user
     
+    session['id'] = env['warden'].user[:id]
     session['name'] = env['warden'].user[:name]
     session["habit"] = env['warden'].user[:habit].downcase
     session["current_streak"] = env['warden'].user[:current_streak].to_words
@@ -138,7 +139,7 @@ class Accountables < Sinatra::Base
     # Set up user variable to be the authenticated user
     # Set the last time the habit was completed to the last updated date stored in the db
     
-    @user = User.first(name: session['name'])
+    @user = User.first(id: session['id'])
     last_updated = @user.last_updated
     
     if session[:current_streak] == "zero"
@@ -160,7 +161,7 @@ class Accountables < Sinatra::Base
   
   post '/myaccount' do
     if params{"Yep!"}
-      @user = User.first(name: session['name'])
+      @user = User.first(id: session['id'])
       @user.current_streak +=1
       @user.last_updated = Date.today
       @user.save
@@ -180,20 +181,32 @@ class Accountables < Sinatra::Base
   end
 
   get '/settings' do
-    env['warden'].authenticate!
-    
+    env['warden'].authenticate!    
+    @user = User.first(id: session['id'])
     haml :settings, layout_engine: :haml
+  end
+
+  patch '/settings' do
+    @user = User.first(id: session['id'])
+
+    @user.name = params[:name]
+    @user.username = params[:username]
+    @user.habit = params[:habit]
+    @user.password = params[:password]
+    @user.save
+    flash[:changed] = "Your details have been changed successfully."
+    redirect '/'
   end
 
   get '/confirm-delete' do
     env['warden'].authenticate!
-    @user = User.first(name: session['name'])
+    @user = User.first(id: session['id'])
     haml :delete, layout_engine: :haml
   end
 
   delete '/confirm-delete' do
     flash[:deleted] = "Your account has been successfully deleted. Come back soon!"
-    @user = User.first(name: session['name'])
+    @user = User.first(id: session['id'])
     @user.destroy
     redirect '/'
   end

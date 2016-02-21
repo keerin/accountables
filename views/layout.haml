@@ -35,6 +35,9 @@
       - if flash[:already]
         %p{:style => 'color: red;'}
           = flash[:already]
+      - if flash[:changed]
+        %p{:style => 'color: green;'}
+          = flash[:changed]
       - if flash[:deleted]
         %p{:style => 'color: green;'}
           = flash[:deleted]
