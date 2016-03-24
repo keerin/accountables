@@ -165,6 +165,7 @@ class Accountables < Sinatra::Base
       @user.current_streak +=1
       @user.last_updated = Date.today
       @user.save
+      Pony.mail(:to => 'thekieran@gmail.com', :from => 'thekieran@gmail.com', :subject => 'Test message', :body => 'Kieran completed his task today!')
       session["current_streak"] = @user.current_streak.to_words
       session["last_updated"] = @user.last_updated
     end
