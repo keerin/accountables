@@ -14,6 +14,7 @@ require 'tilt/haml'
 require 'sinatra/flash'
 require 'date'
 require 'to_words'
+require 'pony'
 
 require 'warden'
 require 'bcrypt'
