@@ -1,0 +1,101 @@
+2016-03-25T12:52:44.790189+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=accountables.herokuapp.com request_id=3f73cef2-c629-4a42-b913-c3b01cf9dbb6 fwd="88.215.43.38" dyno= connect= service= status=503 bytes=
+2016-03-25T12:52:45.490401+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=accountables.herokuapp.com request_id=71921aea-1606-4125-8746-d577f4c21aa5 fwd="88.215.43.38" dyno= connect= service= status=503 bytes=
+2016-03-25T12:52:46.630906+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=accountables.herokuapp.com request_id=a78fc656-271b-480e-ac53-4143348ed32d fwd="184.95.52.198" dyno= connect= service= status=503 bytes=
+2016-03-25T12:52:47.798369+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=accountables.herokuapp.com request_id=bfdc322d-c85a-458a-863b-cc498ba9d878 fwd="88.215.43.38" dyno= connect= service= status=503 bytes=
+2016-03-25T12:56:33.723931+00:00 heroku[slug-compiler]: Slug compilation started
+2016-03-25T12:56:33.723937+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-03-25T12:56:33.547162+00:00 heroku[api]: Deploy dff1cea by thekieran@gmail.com
+2016-03-25T12:56:33.547162+00:00 heroku[api]: Release v38 created by thekieran@gmail.com
+2016-03-25T12:56:33.725592+00:00 heroku[web.1]: State changed from crashed to starting
+2016-03-25T12:56:35.792402+00:00 heroku[web.1]: Starting process with command `bundle exec rackup -p 4300`
+2016-03-25T12:56:40.656899+00:00 app[web.1]: /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core/adapters.rb:163:in `require': cannot load such file -- dm-postgres-adapter (LoadError)
+2016-03-25T12:56:40.656915+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core/adapters.rb:163:in `load_adapter'
+2016-03-25T12:56:40.656916+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core/adapters.rb:133:in `adapter_class'
+2016-03-25T12:56:40.656917+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core/adapters.rb:13:in `new'
+2016-03-25T12:56:40.656917+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core.rb:230:in `setup'
+2016-03-25T12:56:40.656918+00:00 app[web.1]: 	from /app/model.rb:1:in `<top (required)>'
+2016-03-25T12:56:40.656919+00:00 app[web.1]: 	from /app/app.rb:24:in `require'
+2016-03-25T12:56:40.656919+00:00 app[web.1]: 	from /app/app.rb:24:in `<top (required)>'
+2016-03-25T12:56:40.656920+00:00 app[web.1]: 	from /app/config.ru:1:in `require'
+2016-03-25T12:56:40.656921+00:00 app[web.1]: 	from /app/config.ru:1:in `block in <main>'
+2016-03-25T12:56:40.656921+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `instance_eval'
+2016-03-25T12:56:40.656922+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `initialize'
+2016-03-25T12:56:40.656923+00:00 app[web.1]: 	from /app/config.ru:in `new'
+2016-03-25T12:56:40.656923+00:00 app[web.1]: 	from /app/config.ru:in `<main>'
+2016-03-25T12:56:40.656924+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:49:in `eval'
+2016-03-25T12:56:40.656926+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:49:in `new_from_string'
+2016-03-25T12:56:40.656927+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:40:in `parse_file'
+2016-03-25T12:56:40.656936+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:299:in `build_app_and_options_from_config'
+2016-03-25T12:56:40.656937+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:208:in `app'
+2016-03-25T12:56:40.656939+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:336:in `wrapped_app'
+2016-03-25T12:56:40.656940+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:272:in `start'
+2016-03-25T12:56:40.656940+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:147:in `start'
+2016-03-25T12:56:40.656941+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/bin/rackup:4:in `<top (required)>'
+2016-03-25T12:56:40.656942+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/rackup:23:in `load'
+2016-03-25T12:56:40.656942+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/rackup:23:in `<main>'
+2016-03-25T12:56:41.990113+00:00 heroku[web.1]: Process exited with status 1
+2016-03-25T12:56:42.017173+00:00 heroku[web.1]: State changed from starting to crashed
+2016-03-25T12:56:42.018402+00:00 heroku[web.1]: State changed from crashed to starting
+2016-03-25T12:56:43.378909+00:00 heroku[web.1]: Starting process with command `bundle exec rackup -p 39569`
+2016-03-25T12:56:46.267237+00:00 app[web.1]: /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core/adapters.rb:163:in `require': cannot load such file -- dm-postgres-adapter (LoadError)
+2016-03-25T12:56:46.267252+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core/adapters.rb:163:in `load_adapter'
+2016-03-25T12:56:46.267253+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core/adapters.rb:133:in `adapter_class'
+2016-03-25T12:56:46.267254+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core/adapters.rb:13:in `new'
+2016-03-25T12:56:46.267257+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core.rb:230:in `setup'
+2016-03-25T12:56:46.267258+00:00 app[web.1]: 	from /app/model.rb:1:in `<top (required)>'
+2016-03-25T12:56:46.267259+00:00 app[web.1]: 	from /app/app.rb:24:in `require'
+2016-03-25T12:56:46.267259+00:00 app[web.1]: 	from /app/app.rb:24:in `<top (required)>'
+2016-03-25T12:56:46.267260+00:00 app[web.1]: 	from /app/config.ru:1:in `require'
+2016-03-25T12:56:46.267261+00:00 app[web.1]: 	from /app/config.ru:1:in `block in <main>'
+2016-03-25T12:56:46.267261+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `instance_eval'
+2016-03-25T12:56:46.267262+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `initialize'
+2016-03-25T12:56:46.267262+00:00 app[web.1]: 	from /app/config.ru:in `new'
+2016-03-25T12:56:46.267263+00:00 app[web.1]: 	from /app/config.ru:in `<main>'
+2016-03-25T12:56:46.267263+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:49:in `eval'
+2016-03-25T12:56:46.267264+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:49:in `new_from_string'
+2016-03-25T12:56:46.267264+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:40:in `parse_file'
+2016-03-25T12:56:46.267274+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:299:in `build_app_and_options_from_config'
+2016-03-25T12:56:46.267275+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:208:in `app'
+2016-03-25T12:56:46.267275+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:336:in `wrapped_app'
+2016-03-25T12:56:46.267276+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:272:in `start'
+2016-03-25T12:56:46.267276+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:147:in `start'
+2016-03-25T12:56:46.267277+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/bin/rackup:4:in `<top (required)>'
+2016-03-25T12:56:46.267278+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/rackup:23:in `load'
+2016-03-25T12:56:46.267278+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/rackup:23:in `<main>'
+2016-03-25T12:56:46.915394+00:00 heroku[web.1]: State changed from starting to crashed
+2016-03-25T12:56:46.894488+00:00 heroku[web.1]: Process exited with status 1
+2016-03-25T13:00:49.858685+00:00 heroku[slug-compiler]: Slug compilation started
+2016-03-25T13:00:49.858691+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-03-25T13:00:49.680547+00:00 heroku[api]: Deploy dff1cea by thekieran@gmail.com
+2016-03-25T13:00:49.680547+00:00 heroku[api]: Release v39 created by thekieran@gmail.com
+2016-03-25T13:00:51.218229+00:00 heroku[web.1]: State changed from crashed to starting
+2016-03-25T13:00:53.033629+00:00 heroku[web.1]: Starting process with command `bundle exec rackup -p 47091`
+2016-03-25T13:00:56.465707+00:00 app[web.1]: /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core/adapters.rb:163:in `require': cannot load such file -- dm-postgres-adapter (LoadError)
+2016-03-25T13:00:56.465727+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core/adapters.rb:163:in `load_adapter'
+2016-03-25T13:00:56.465728+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core/adapters.rb:133:in `adapter_class'
+2016-03-25T13:00:56.465731+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core/adapters.rb:13:in `new'
+2016-03-25T13:00:56.465732+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/dm-core-1.2.1/lib/dm-core.rb:230:in `setup'
+2016-03-25T13:00:56.465733+00:00 app[web.1]: 	from /app/model.rb:1:in `<top (required)>'
+2016-03-25T13:00:56.465733+00:00 app[web.1]: 	from /app/app.rb:24:in `require'
+2016-03-25T13:00:56.465734+00:00 app[web.1]: 	from /app/app.rb:24:in `<top (required)>'
+2016-03-25T13:00:56.465735+00:00 app[web.1]: 	from /app/config.ru:1:in `require'
+2016-03-25T13:00:56.465736+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `instance_eval'
+2016-03-25T13:00:56.465735+00:00 app[web.1]: 	from /app/config.ru:1:in `block in <main>'
+2016-03-25T13:00:56.465737+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `initialize'
+2016-03-25T13:00:56.465737+00:00 app[web.1]: 	from /app/config.ru:in `new'
+2016-03-25T13:00:56.465738+00:00 app[web.1]: 	from /app/config.ru:in `<main>'
+2016-03-25T13:00:56.465740+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:49:in `eval'
+2016-03-25T13:00:56.465741+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:49:in `new_from_string'
+2016-03-25T13:00:56.465741+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:40:in `parse_file'
+2016-03-25T13:00:56.465742+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:299:in `build_app_and_options_from_config'
+2016-03-25T13:00:56.465744+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:208:in `app'
+2016-03-25T13:00:56.465745+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:336:in `wrapped_app'
+2016-03-25T13:00:56.465746+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:272:in `start'
+2016-03-25T13:00:56.465761+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/bin/rackup:4:in `<top (required)>'
+2016-03-25T13:00:56.465748+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:147:in `start'
+2016-03-25T13:00:56.465779+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/rackup:23:in `load'
+2016-03-25T13:00:56.465806+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/rackup:23:in `<main>'
+2016-03-25T13:00:57.144529+00:00 heroku[web.1]: Process exited with status 1
+2016-03-25T13:00:57.183358+00:00 heroku[web.1]: State changed from starting to crashed
+2016-03-25T13:00:57.443039+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=accountables.herokuapp.com request_id=13e558ba-cdda-4ec6-b26c-aa01311f16ee fwd="88.215.43.38" dyno= connect= service= status=503 bytes=
+2016-03-25T13:00:57.950694+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=accountables.herokuapp.com request_id=b8a17deb-bc0f-471d-93a6-230392a10eb1 fwd="88.215.43.38" dyno= connect= service= status=503 bytes=
