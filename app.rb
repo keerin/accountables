@@ -34,7 +34,24 @@ class Accountables < Sinatra::Base
   register Sinatra::Flash
   set :session_secret, ENV['SESSION_SECRET']
   set :method_override, true
+=begin 
+  configure do
+    # ...
 
+    Pony.options = {
+      :via => :smtp,
+      :via_options => {
+        :address => 'smtp.sendgrid.net',
+        :port => '587',
+        :domain => 'myapp.com',
+        :user_name => ENV['SENDGRID_USERNAME'],
+        :password => ENV['SENDGRID_PASSWORD'],
+        :authentication => :plain,
+        :enable_starttls_auto => true
+      }
+    }
+  end
+=end
   use Warden::Manager do |config|
     # Tell Warden how to save our User info into a session.
     # Sessions can only take strings, not Ruby code, we'll store
