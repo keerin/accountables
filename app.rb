@@ -14,7 +14,6 @@ require 'tilt/haml'
 require 'sinatra/flash'
 require 'date'
 require 'to_words'
-require 'pony'
 
 require 'warden'
 require 'bcrypt'
@@ -34,23 +33,6 @@ class Accountables < Sinatra::Base
   register Sinatra::Flash
   set :session_secret, ENV['SESSION_SECRET']
   set :method_override, true
-
-  configure do
-    # ...
-
-    Pony.options = {
-      :via => :smtp,
-      :via_options => {
-        :address => 'smtp.sendgrid.net',
-        :port => '587',
-        :domain => 'accountables.herokuapp.com',
-        :user_name => ENV['SENDGRID_USERNAME'],
-        :password => ENV['SENDGRID_PASSWORD'],
-        :authentication => :plain,
-        :enable_starttls_auto => true
-      }
-    }
-  end
 
   use Warden::Manager do |config|
     # Tell Warden how to save our User info into a session.
@@ -183,7 +165,6 @@ class Accountables < Sinatra::Base
       @user.current_streak +=1
       @user.last_updated = Date.today
       @user.save
-      Pony.mail(:to => 'thekieran@gmail.com', :from => 'thekieran@gmail.com', :subject => 'Test message', :body => 'Kieran completed his task today!')
       session["current_streak"] = @user.current_streak.to_words
       session["last_updated"] = @user.last_updated
     end

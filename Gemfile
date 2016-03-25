@@ -20,7 +20,6 @@ gem 'dm-aggregates'
 
 gem 'bcrypt-ruby'
 gem 'warden'
-gem "pony"
 
 gem 'sqlite3', :group => 'development'
 gem 'dm-sqlite-adapter', :group => 'development'
