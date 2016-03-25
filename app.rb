@@ -43,7 +43,7 @@ class Accountables < Sinatra::Base
       :via_options => {
         :address => 'smtp.sendgrid.net',
         :port => '587',
-        :domain => 'myapp.com',
+        :domain => 'accountables.herokuapp.com',
         :user_name => ENV['SENDGRID_USERNAME'],
         :password => ENV['SENDGRID_PASSWORD'],
         :authentication => :plain,
