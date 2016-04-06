@@ -1,26 +1,28 @@
-### Accept rvm key
+# Setting up
+
+## Accept rvm key
 
 $ - gpg --keyserver hkp://keys.gnupg.net --recv-keys 
 
 409B6B1796C275462A1703113804BB82D39DC0E3
 
-### Install Ruby
+## Install Ruby
 
 $ \curl -sSL https://get.rvm.io | bash -s stable --ruby=2.2.1
 
-### Clone my repo
+## Clone my repo
 
 $ git clone https://github.com/keerin/accountables.git
 
-### Move into project folder and install bundler
+## Move into project folder and install bundler
 
 $ cd /accountables; gem install bundler
 
-### Set up all gems according to gemfile
+## Set up all gems according to gemfile
 
 $ bundle install
 
-### Intro to Sinatra directory and file structure
+## Intro to Sinatra directory and file structure
 
  * .bundle - directors which allows you to set a config file so only dev-related gems are installed.
  * db - Directory for my sqlite3 database.
@@ -37,7 +39,7 @@ $ bundle install
  * model.rb - my database model set up. I use an ORM called DataMapper. Very easy to use.
  * warden.rb - This was in my main app.rb code, but I separated it out to be more concise. This should be straightforward to read and figure out even if you know no Ruby.
 
-### Run the app
+## Run the app
 
 $ shotgun config.ru
 
@@ -51,6 +53,6 @@ Which will require a restart of the server to see any code changes.
 
 Run the app. Don't laugh at obvious bugs :)
 
-### Contributing
+## Contributing
 
 Can you open issues on Github for bugs you find? I will be doing this for my own sake. Be good if you could as well.
