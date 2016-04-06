@@ -24,7 +24,7 @@ $ bundle install
 
 ## Intro to Sinatra directory and file structure
 
- * .bundle - directors which allows you to set a config file so only dev-related gems are installed.
+ * .bundle - directory which allows you to set a config file so only dev-related gems are installed.
  * db - Directory for my sqlite3 database.
  * project plans - my own plans and to do lists, should be added to .gitignore.
  * public - This is where Sinatra looks for css and other assets like your images or JS.
