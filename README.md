@@ -47,7 +47,7 @@ Open 127.0.0.1:9393 (or whatever port Shotgun runs on)
 
 Shotgun is used because it reloads automatically when the code changes. The standard method would be:
 
-$ bundle exec rackup
+$ rackup config.ru
 
 Which will require a restart of the server to see any code changes.
 
