@@ -30,9 +30,9 @@ $ bundle install
  * public - This is where Sinatra looks for css and other assets like your images or JS.
  * views - Defaul directory for Sinatra apps to store html (or templated) markup files. I use haml.
  * .env - tried to create a .env file to store environment variables, but apparently this is the wrong approach - still learning.
- * Gemfile - This contains all the gems my project relies on. I;ve grouped them as core app, ORM, security then dev and prod groups.
+ * Gemfile - This contains all the gems my project relies on. I've grouped them as core app, ORM, security then dev and prod groups.
  * Gemfile.lock - Bundler creates this file to indicate version of gems etc used and the source for each
- * Heroku requires this - https://devcenter.heroku.com/articles/getting-started-with-ruby-o#declare-process-types-with-procfile
+ * Procfile - Heroku requires this - https://devcenter.heroku.com/articles/getting-started-with-ruby-o#declare-process-types-with-procfile
  * app.rb - This is the meat and potatoes. Most Sinatra apps are all in one file. I chose to subclass the app, in case I needed to rely on middleware from anywhere. I can explain this later, but you will see I set up the app logic in class Accountables < Sinatra::Base - this means my class inherits the sinatra base classes. Extra stuff I have to add in as I need it. Done this so I could learn more really.
  * config.ru - Sinatra is a Rack app (Rails is too, actually). Rack is a Ruby webserver interface. Because I am subclassing my app in Sinatra::Base, I have to include a config file for Rack.
  * logs.txt - I just piped the Heroku run logs to a text file and commited them by accident
@@ -43,7 +43,7 @@ $ bundle install
 
 $ shotgun config.ru
 
-Open 127.0.0.1:9393 (or whatever port Shotgun runs on)
+Open 127.0.0.1:9393 (or whatever port Shotgun runs on, it tells you on command line)
 
 Shotgun is used because it reloads automatically when the code changes. The standard method would be:
 
