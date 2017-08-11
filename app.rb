@@ -116,8 +116,12 @@ class Accountables < Sinatra::Base
         :current_streak => 0,
         :last_updated   => Date.today - 1
       )
-      redirect '/myaccount'
-      # Need to add username and password to session.
+    	if session[:return_to].nil?
+    	  redirect '/myaccount'
+    	else
+    	  redirect session[:return_to]
+    	end
+
     else
       flash[:already] = "Someone's already using that email address here"
       redirect '/register'
