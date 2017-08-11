@@ -18,7 +18,7 @@ gem 'dm-types'
 gem 'dm-validations'
 gem 'dm-aggregates'
 
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 gem 'warden'
 
 gem 'sqlite3', :group => 'development'
