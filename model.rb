@@ -31,6 +31,4 @@ class User
 end
 
 DataMapper.finalize
-DataMapper.auto_migrate!
 DataMapper.auto_upgrade!
-User.auto_migrate!
